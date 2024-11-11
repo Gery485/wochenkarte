@@ -1,5 +1,4 @@
 <?php
-// Start der Session
 session_start();
 require_once 'classes/CookieHelper.php';
 require_once 'classes/User.php';
@@ -13,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: wochenkarte.php");
             exit();
         } else {
-            $error = "Ungültige Anmeldedaten.";
+            $error = "Zugangsdaten ungültig";
         }
     }
 }
@@ -25,30 +24,52 @@ $isCookieAllowed = CookieHelper::isCookieSet('allowed');
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Anmeldung</title>
+    <title>Wochenkarte Anmeldung</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Zusätzliche Stile für das Design gemäß den Mockups */
+        .container {
+            max-width: 400px;
+            margin-top: 50px;
+        }
+        .btn-custom {
+            background-color: #FFAA00;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #FF8800;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-<body class="container">
-    <h1>Anmeldung zur Wochenkarte</h1>
+<body class="container text-center">
+    <h1 class="mt-5">Wochenkarte</h1>
 
     <?php if (!$isCookieAllowed): ?>
-        <form method="post">
-            <p>Bitte akzeptieren Sie unsere Cookie-Richtlinien, um fortzufahren.</p>
-            <button type="submit" name="accept_cookies" class="btn btn-primary">Cookies akzeptieren</button>
-        </form>
+        <!-- Cookie-Banner -->
+        <div class="mt-5">
+            <p>Willkommen</p>
+            <p class="text-muted">Diese Website verwendet Cookies.</p>
+            <form method="post">
+                <button type="submit" name="accept_cookies" class="btn btn-custom">Akzeptieren</button>
+            </form>
+        </div>
     <?php else: ?>
-        <form method="post">
+        <!-- Login-Formular -->
+        <form method="post" class="mt-5">
+            <h2>Bitte anmelden</h2>
             <div class="form-group">
-                <label for="email">E-Mail-Adresse:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail-Adresse" required>
             </div>
             <div class="form-group">
-                <label for="password">Passwort:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Passwort" required>
             </div>
-            <button type="submit" class="btn btn-primary">Anmelden</button>
+            <button type="submit" class="btn btn-primary btn-block">Anmelden</button>
             <?php if (isset($error)): ?>
-                <p class="text-danger"><?= htmlspecialchars($error) ?></p>
+                <p class="error-message mt-2"><?= htmlspecialchars($error) ?></p>
             <?php endif; ?>
         </form>
     <?php endif; ?>
