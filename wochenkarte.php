@@ -38,23 +38,23 @@ if (!CookieHelper::isCookieSet('allowed') || !User::isLoggedIn()) {
     <div class="menu-grid mt-5">
         <!-- Bilder und Beschriftungen für jeden Tag -->
         <div class="menu-item">
-            <img src="path/to/montag.jpg" alt="Montag">
+            <img src="/bilder/1.jpg" alt="Montag">
             <p>Montag</p>
         </div>
         <div class="menu-item">
-            <img src="path/to/dienstag.jpg" alt="Dienstag">
+            <img src="/bilder/2.jpeg" alt="Dienstag">
             <p>Dienstag</p>
         </div>
         <div class="menu-item">
-            <img src="path/to/mittwoch.jpg" alt="Mittwoch">
+            <img src="/bilder/3.jpg" alt="Mittwoch">
             <p>Mittwoch</p>
         </div>
         <div class="menu-item">
-            <img src="path/to/donnerstag.jpg" alt="Donnerstag">
+            <img src="/bilder/4.jpg" alt="Donnerstag">
             <p>Donnerstag</p>
         </div>
         <div class="menu-item">
-            <img src="path/to/freitag.jpg" alt="Freitag">
+            <img src="/bilder/5.jpg" alt="Freitag">
             <p>Freitag</p>
         </div>
         <div class="menu-item">
