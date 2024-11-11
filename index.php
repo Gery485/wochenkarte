@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'classes/CookieHelper.php';
-require_once 'classes/User.php';
+require_once 'CookieHelper.php';
+require_once 'User.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['accept_cookies'])) {

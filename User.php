@@ -7,8 +7,8 @@ class User {
     private $errors = [];
 
     // Beispielhafte Zugangsdaten für den Prototyp
-    const VALID_EMAIL = 'gast@example.com';
-    const VALID_PASSWORD = 'password123';
+    const VALID_EMAIL = 'sophie.nemes05@gmail.com';
+    const VALID_PASSWORD = '123';
 
     public function __construct($email, $password) {
         $this->email = $email;

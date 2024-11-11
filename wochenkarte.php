@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'classes/CookieHelper.php';
-require_once 'classes/User.php';
+require_once 'CookieHelper.php';
+require_once 'User.php';
 
 if (!CookieHelper::isCookieSet('allowed') || !User::isLoggedIn()) {
     header("Location: index.php");
@@ -38,23 +38,23 @@ if (!CookieHelper::isCookieSet('allowed') || !User::isLoggedIn()) {
     <div class="menu-grid mt-5">
         <!-- Bilder und Beschriftungen für jeden Tag -->
         <div class="menu-item">
-            <img src="/bilder/1.jpg" alt="Montag">
+            <img src="bilder/1.jpg" alt="Montag">
             <p>Montag</p>
         </div>
         <div class="menu-item">
-            <img src="/bilder/2.jpeg" alt="Dienstag">
+            <img src="bilder/2.jpeg" alt="Dienstag">
             <p>Dienstag</p>
         </div>
         <div class="menu-item">
-            <img src="/bilder/3.jpg" alt="Mittwoch">
+            <img src="bilder/3.jpg" alt="Mittwoch">
             <p>Mittwoch</p>
         </div>
         <div class="menu-item">
-            <img src="/bilder/4.jpg" alt="Donnerstag">
+            <img src="bilder/4.jpg" alt="Donnerstag">
             <p>Donnerstag</p>
         </div>
         <div class="menu-item">
-            <img src="/bilder/5.jpg" alt="Freitag">
+            <img src="bilder/5.jpg" alt="Freitag">
             <p>Freitag</p>
         </div>
         <div class="menu-item">
